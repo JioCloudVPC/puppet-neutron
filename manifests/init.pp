@@ -296,7 +296,7 @@ class neutron (
 
   include ::neutron::params
 
-  Package['neutron'] -> Neutron_config<||>
+  Package['neutron-server'] -> Neutron_config<||>
 
   if $use_ssl {
     if !$cert_file {
@@ -340,11 +340,7 @@ class neutron (
 
   file { '/etc/neutron/neutron.conf': }
 
-  package { 'neutron':
-    ensure => $package_ensure,
-    name   => $::neutron::params::package_name,
-    tag    => 'openstack',
-  }
+
 
   neutron_config {
     'DEFAULT/verbose':                 value => $verbose;
