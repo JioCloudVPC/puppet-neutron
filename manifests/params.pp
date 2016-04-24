@@ -82,7 +82,7 @@ class neutron::params {
     $nobody_user_group    = 'nogroup'
 
     $package_name       = 'neutron-common'
-    $server_package     = 'neutron-server'
+    $server_package     = 'python-neutron'
     $server_service     = 'neutron-server'
     $client_package     = 'python-neutronclient'
 
