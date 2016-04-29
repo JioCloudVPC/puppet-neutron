@@ -329,7 +329,7 @@ class neutron (
   }
 
   File {
-    require => Package['neutron'],
+    require => Package['neutron-server'],
     owner   => 'root',
     group   => 'neutron',
   }
